@@ -6,7 +6,7 @@ import Comment from './Comment';
 
 const Wrapper = styled.div`
 width: 60vw;
-margin: 0 auto;
+margin: 2rem auto;
 padding: 1rem;
 display: flex;
 flex-direction: column;
