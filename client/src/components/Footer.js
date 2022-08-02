@@ -7,6 +7,16 @@ const Wrapper = styled.div`
 position: fixed;
 bottom: 1.8rem;
 right: 1.8rem;
+@media  (max-width : 425px){
+bottom: 6rem;
+right: 0.5rem;
+
+}
+@media  (max-width : 375px){
+display: none;
+
+}
+
 `
 
 const onClickToTop = () => {

@@ -16,6 +16,13 @@ align-items: center;
   border-radius: 0.2rem 0 0 0.2rem;
   /* margin: 0 1rem; */
   padding-left: 1rem;
+  @media  (max-width : 768px){
+  width: 58%;
+}
+
+@media  (max-width : 425px){
+  width: 70%;
+}
 
 }
 

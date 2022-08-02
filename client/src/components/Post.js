@@ -14,23 +14,69 @@ justify-content: space-evenly;
 /* background-color: aqua; */
 border-radius: 1rem;
 box-shadow: 0.01rem 0.1rem 0.1rem 0.1rem lightgrey;
+
+@media (max-width: 768px) {
+  margin: 0 auto;
+  width: 100vw;
+  border-radius: 0;
+  
+}
 `
 
 const Header =styled.div`
 display: flex;
 flex-direction: column;
-/* background-color: yellow; */
 padding: 1rem;
 &>div{
   align-self: flex-start;
   font-weight: bold;
   margin-top: 1.5rem;
 }
+
+@media (max-width : 375px) {
+
+  margin-top: 1rem;
+
+  & > div {
+  margin-top  :1rem ;
+  font-weight: 400;
+  font-size: 0.9rem;
+  }
+
+  & > h1 {
+  font-size: 1.5rem;
+  }
+} 
+
+
+
+@media (max-width: 320px) {
+  & > h1 {
+  font-size: 1.3rem;
+  }
+  
+}
+
+
+
 `
 
 const Body = styled.div`
-/* background-color: yellowgreen; */
 padding: 3rem 1rem;
+
+@media (max-width: 768px) {
+ padding: 2rem 1rem;
+}
+@media (max-width: 425px) {
+ padding: 0 1rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 320px) {
+ & > p {
+  font-size: 1rem;
+ }
+}
 
 
 `
@@ -39,9 +85,31 @@ const Footer = styled.div`
 padding: 1rem;
 &>h3{
   border-top: 0.1rem solid lightgray;
-  padding-top: 3rem;
-  /* border-top: 0.1rem solid lightgray; */
- 
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  
+  & > h3 {font-size: 1.2rem;
+    padding-top: 2rem;
+
+  }
+  
+}
+@media (max-width: 375px) {
+  & > h3 {
+  font-size: 0.9rem;
+  padding: 1rem 0 0.3rem 0;
+  }
+  
+}
+
+@media (max-width: 320px) {
+  & > h3 {
+  font-size: 0.8rem;
+  padding: 1rem 0 0.3rem 0;
+  }
+  
 }
 `
 const Post = () => {

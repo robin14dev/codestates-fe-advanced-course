@@ -17,6 +17,12 @@ align-items: center;
 cursor: pointer;
 position: sticky;
 top: 0;
+
+@media (max-width: 425px) {
+  &> h1 {
+    font-size: 1.5rem;
+  }
+}
 `
 
 function App() {

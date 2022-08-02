@@ -35,6 +35,7 @@ const Mainpage = () => {
        })
      setSearchText(text)
       setPosts(filtered)
+      console.log(filtered);
     })
     .catch(err => {
       console.log(err);
