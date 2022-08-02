@@ -12,7 +12,7 @@ padding: 1rem 0 ;
 `
 
 const Comment = ({comment}) => {
-  const {id, postId, name, email, body} = comment
+  const {name,body} = comment
   return (
     <Wrapper>
       <h4>{name}</h4>

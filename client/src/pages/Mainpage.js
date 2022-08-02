@@ -3,6 +3,7 @@ import PostList from '../components/PostList';
 import Search from '../components/Search';
 import axios from 'axios';
 
+
 const Mainpage = () => {
   const [posts, setPosts] = useState([]);
   const [searchText, setSearchText] = useState('')

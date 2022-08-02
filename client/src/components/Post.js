@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
-import {useParams, useLocation} from "react-router-dom"
+import {useLocation} from "react-router-dom"
 import Comment from './Comment';
 
 const Wrapper = styled.div`
