@@ -2,11 +2,14 @@
 
 ## 완성된 GIF 파일 및 배포 링크
 
--
+- [배포 링크](http://fe-advanced-robin14dev.s3-website.ap-northeast-2.amazonaws.com/)
 
 ## 프로젝트 실행 방법
 
-1. 로컬에 git clone 으로 해당 repository를 클론합니다.
+1. `git clone` 으로 해당 repository를 로컬 컴퓨터에 클론합니다.
+2. `npm install`로 `package.json` 에 명시되어 있는 모듈들을 설치합니다.
+3. `env.example`에 있는 환경변수명에 `https://jsonplaceholder.typicode.com` 해당 url을 작성후, 해당 파일명을 .env로 변경합니다.
+4. `npm start`를 입력하여 앱을 실행합니다.
 
 ## 사용한 스택 목록
 

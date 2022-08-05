@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
-import {useLocation, useParams} from "react-router-dom"
+import {useParams} from "react-router-dom"
 import Comment from './Comment';
 import { Helmet } from "react-helmet-async";
 
@@ -115,12 +115,8 @@ padding: 1rem;
 `
 const Post = () => {
   // const {state} = useLocation()
-  const location = useLocation()
   const params = useParams()
-  console.log(params); //* 얘 사용해야됨 {id: '2'}
-  console.log(location); //{pathname: '/posts/2', search: '', hash: '', state: null, key: 'default'}
-  // console.log(state);
-  // const {title, body, id, userId} = state;
+  
 
   const [comments, setComments] = useState([])
   const [post, setPost] = useState({})
@@ -134,7 +130,6 @@ const Post = () => {
       setPost({id, title, body, userId})
       axios.get(`${process.env.REACT_APP_API_URL}/posts/${id}/comments`)
       .then(response => {
-        console.log(response);
         setComments(response.data)
       })
       .catch(err => {

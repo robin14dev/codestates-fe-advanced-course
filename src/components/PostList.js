@@ -190,29 +190,23 @@ border: 1px solid lightgray;
 const PostList = ({posts, pageLength, searchText, page}) => {
   const [offset, setOffset] = useState((page-1)*10);
   const [lastBundle, setLastBundle] = useState(false)
-  // const isLastBundleCheck = {}
   const [isLastBundleCheck, setIsLastBundleCheck] = useState({})
-  // const [bundleLevel, setBundleLevel] = useState(1)
-  console.log(pageLength);
 
 
   const navigate = useNavigate()
   const location = useLocation()
-  console.log(location);
 
   const goToPost = (post) => {
     navigate(`/posts/${post.id}`, {state : post})
   }
 
   const showingPage = (e) => {
-    // console.log(idx);
-    //1이 들어오면 0, 2가 들어오면 10, 3이 들어오면 20
+    
     setOffset((Number(e.target.textContent)-1)*10)
     const {query} = queryString.parse(location.search)
     const showingQuery = `?query=${query}&page=${(Number(e.target.textContent))}`
     navigate(showingQuery)
-    // setOffset(10 * (idx-1))
-    // window.scrollTo({top:0, behavior:'smooth'})
+    window.scrollTo({top:0, behavior:'smooth'})
     }
   const showingArrow = (e) => {
     if(e.target.textContent === '>') {
@@ -230,7 +224,7 @@ const PostList = ({posts, pageLength, searchText, page}) => {
         setOffset(curOffset-10)  
       }
     }
-    // window.scrollTo({top:0, behavior:'smooth'})
+    window.scrollTo({top:0, behavior:'smooth'})
   }
 
   const textHighlight = (title, searchText)=>{
@@ -289,13 +283,11 @@ const PostList = ({posts, pageLength, searchText, page}) => {
        let buttonCount =0;
        if(offset % bundleUnit === 0) { // offset : 0, 50, 100, 150 기준 // 처음에 아예 세팅
        if(posts.length - offset >= bundleUnit) { // 넘친다면 5개
-          console.log('here');
           setLastBundle(false)
           // 여기서 0, 10, 20, 30, 40 false로 하기 
           for(let i = offset; i < offset + bundleUnit; i = i + 10) {
             isLastBundleCheck[i] = false
           }
-          console.log(isLastBundleCheck);
           setIsLastBundleCheck(isLastBundleCheck)
 
        } else { // 이미 50개 미만
@@ -307,14 +299,11 @@ const PostList = ({posts, pageLength, searchText, page}) => {
           for(let i = offset; i < offset + bundleUnit; i = i + 10) {
             isLastBundleCheck[i] = buttonCount
           }
-          console.log(isLastBundleCheck);
           setIsLastBundleCheck(isLastBundleCheck)
-          console.log(buttonCount);
           setLastBundle(buttonCount)
        }  
        } else { // offset : 10, 20, 30, 40 ~~~ 60, 70, 80, 90, 
           //해당 offset이 속한 번들의 버튼수를 기록해논 객체를 조회하여 세팅한다
-          console.log(isLastBundleCheck);
           isLastBundleCheck[offset] === false ? setLastBundle(false) : setLastBundle(isLastBundleCheck[offset]);
        }
   }

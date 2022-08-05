@@ -24,7 +24,7 @@ const Mainpage = () => {
       const {query, page} = queryString.parse(location.search)//{page: '2', query: 'sunt'}
       if((page || 1)&& (query !=='undefined' && undefined)) {
         //url에 검색값이 있으면
-        console.log('url에 검색값과 page가 있으면', query);
+        // console.log('url에 검색값과 page가 있으면', query);
         onSearch(query)
         setPage(Number(page))
       } 
@@ -59,9 +59,7 @@ const Mainpage = () => {
     페이지네이션도 각각의 페이지  
    */
    const onSearch = (text) => {
-    console.log('onsearch text', text);
-    console.log('location here--------', location);
-
+   
     axios.get(`${process.env.REACT_APP_API_URL}/posts`)
     .then(response => {
       const filtered = response.data.filter(post => {
@@ -71,7 +69,6 @@ const Mainpage = () => {
      setSearchText(text)
       // setPosts(filtered)
       setFilteredPosts(filtered)
-      console.log(filtered);
 
     })
     .catch(err => {
