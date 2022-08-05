@@ -2,14 +2,11 @@
 
 ## 완성된 GIF 파일 및 배포 링크
 
-- [배포 링크](http://fe-advanced-robin14dev.s3-website.ap-northeast-2.amazonaws.com/)
+- [배포링크](http://fe-advanced-robin14dev.s3-website.ap-northeast-2.amazonaws.com/)
 
 ## 프로젝트 실행 방법
 
-1. `git clone` 으로 해당 repository를 로컬 컴퓨터에 클론합니다.
-2. `npm install`로 `package.json` 에 명시되어 있는 모듈들을 설치합니다.
-3. `env.example`에 있는 환경변수명에 `https://jsonplaceholder.typicode.com` 해당 url을 작성후, 해당 파일명을 .env로 변경합니다.
-4. `npm start`를 입력하여 앱을 실행합니다.
+1. 로컬에 git clone 으로 해당 repository를 클론합니다.
 
 ## 사용한 스택 목록
 
@@ -59,25 +56,29 @@
 - 특정 검색 결과에 따른 필터링된 정보가 렌더링 됩니다.
 - 특정 검색어가 게시물 목록에 어디에 속해있는지 mark 태그 를 이용하여 하이라이트 기능을 추가하였습니다.
 - 검색 결과와 검색 결과에 따른 특정 페이지를 `?query=sunt&page=2` 와 같이 uri를 구성하여
-  특정 검색결과를 그대로 공유할 수 있게 구현하였습니다.(SPA 주소가 똑같은 점 보완, SEO)
+  특정 검색결과를 그대로 공유할 수 있게 구현하였습니다.
+  ![검색화면_AdobeExpress](https://user-images.githubusercontent.com/95751232/183073760-95a42657-8808-498f-806b-094256a4b782.gif)
 
 ### 반응형 CSS
 
 - laptop 화면부터 mobile 화면까지 반응형 CSS를 구현하였습니다.
 - 태블릿 이하의 크기에서는 화면 크기를 고려하여, 페이지네이션 버튼의 개수를 10개에서 5개로 축소하였습니다.
+  ![반응형-메인페이지_AdobeExpress](https://user-images.githubusercontent.com/95751232/183074897-ddbc4dac-4d00-4681-a0c5-6250b2f5917c.gif)
+
 - 모바일 화면에서는 글 제목과 작성자만 렌더링 되도록 구현하였습니다.
+  ![모바일화면_AdobeExpress](https://user-images.githubusercontent.com/95751232/183074160-0a370fda-935a-4635-816c-f24d930a75fa.gif)
 
 ### 탭 이름 동적 변경
 
 - `react-helmet-async` 라이브러리를 활용하여, favicon과 탭 이름을 변경하였습니다.
-- 특정 글의 상세페이지로 이동할 시에는 해당 글의 제목이 탭 이름에 나오게 구현하여 유저가 현재 이용중인 사이트의 내용을 탭을 보면서
-  유추할 수 있게끔 구현하였습니다.
+- 특정 글의 상세페이지로 이동할 시에는 해당 글의 제목이 탭 이름에 나오게 구현하여 유저가 현재 이용중인 사이트의 내용을 탭을 보면서유추할 수 있게 구현하였습니다.
 
-- 등 해당 과제에 대해서 소개하고 싶은 내용을 자유롭게 적어주세요.
+  ![helmet_AdobeExpress](https://user-images.githubusercontent.com/95751232/183076027-56bde2db-14b5-4674-a4d0-70b7b21d7699.gif)
 
 ### 스크롤 이동
 
 - 웹페이지의 높이가 길어지는 현상으로 스크롤의 노동?을 방지하기 위해서 스크롤바 옆에 상단으로 이동할 수 있는 버튼을 구현하였습니다.
+  ![스크롤이동_AdobeExpress](https://user-images.githubusercontent.com/95751232/183076587-1cf7dc1d-7a24-44fc-80bb-93da61478301.gif)
 - 모바일 화면에서는 보여지는 정보들이 줄어들고 화면 크기가 작기 때문에 버튼이 보이지 않게 구현하였습니다.
 
 - 화면의 제일 위에 보이는 `FE-Advanced`를 클릭시 페이지가 새로고침되도록 구현하였습니다.
