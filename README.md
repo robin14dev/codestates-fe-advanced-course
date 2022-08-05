@@ -36,42 +36,38 @@
 - `react-router-dom` 라이브러리로 useNavigate를 사용하여 특정 게시물을 클릭하면 해당 글의 상세페이지로 이동할 수 있도록 구현하였습니다.
 - `useNavigate`와 `useLocation`을 활용하여 URI에 따른 게시물의 정보를 렌더링 할 수 있도록 구현하였고 이는 웹사이트 공유시 해당 URI에 따른
   정보들이 전해질 수 있도록 만들었습니다.
-- 각 게시물 리스트는 제목과 작성자 글 내용으로 구성되며, 글 내용은 2줄로 제한 하여 한 화면에 여러 게시글 목록을 볼 수 있도록 구현하였습니다.
+- 각 게시물 리스트는 제목과 작성자 글 내용으로 구성되며, 제목은 1줄, 내용은 2줄로 제한 하여 한 화면에 여러 게시글 목록을 볼 수 있도록 구현하였습니다.
+   ![image](https://user-images.githubusercontent.com/95751232/183092782-93f8133e-2e27-4fa5-8384-15da2b1e39b6.png)
+
 
 ### 각 게시물 당 상세페이지 구현
 
 - `post`라는 엔드포인트로 분기를 하여 postList에서 받아온 post.id를 이용해 외부API를 호출하여 상세 내용과 댓글 데이터를 불러옵니다.
+   ![image](https://user-images.githubusercontent.com/95751232/183093209-7e02124d-3955-4a56-b02e-9501f1ee4b04.png)
 
+### 전체
 - CSS는 `styled-component`를 이용하여 구현하였고, 버튼 컴포넌트를 props로 두어 숫자 버튼과 화살표 버튼을 재활용 할 수 있게 구현하였습니다.
 
-##
 
-## (가산점) 직접 작성한 Wireframe 혹은 Prototype (figma 등의 다양한 툴 활용)
 
--
-
-## (가산점) 성능 최적화에 대해서 고민하고 개선한 방법
-
--
-
-## (가산점) 추가 구현 사항에 대한 구현 방법과 설명
+## 추가 구현 사항에 대한 구현 방법과 설명
 
 ### 검색기능
 
 - 특정 검색 결과에 따른 필터링된 정보가 렌더링 됩니다.
 - 특정 검색어가 게시물 목록에 어디에 속해있는지 mark 태그 를 이용하여 하이라이트 기능을 추가하였습니다.
-- 검색 결과와 검색 결과에 따른 특정 페이지를 `?query=sunt&page=2` 와 같이 uri를 구성하여
-  특정 검색결과를 그대로 공유할 수 있게 구현하였습니다.
   ![검색화면_AdobeExpress](https://user-images.githubusercontent.com/95751232/183073760-95a42657-8808-498f-806b-094256a4b782.gif)
+- 검색 결과와 검색 결과에 따른 특정 페이지를 `?query=esse&page=2` 와 같이 uri를 구성하여 특정 검색결과를 그대로 공유할 수 있게 구현하였습니다.
+  ![image](https://user-images.githubusercontent.com/95751232/183094177-1103435b-4923-412a-9c0f-decd60a04e5b.png)
+
 
 ### 반응형 CSS
 
 - laptop 화면부터 mobile 화면까지 반응형 CSS를 구현하였습니다.
 - 태블릿 이하의 크기에서는 화면 크기를 고려하여, 페이지네이션 버튼의 개수를 10개에서 5개로 축소하였습니다.
-  ![반응형-메인페이지_AdobeExpress](https://user-images.githubusercontent.com/95751232/183074897-ddbc4dac-4d00-4681-a0c5-6250b2f5917c.gif)
-
+ ![반응형-메인페이지_AdobeExpress](https://user-images.githubusercontent.com/95751232/183074897-ddbc4dac-4d00-4681-a0c5-6250b2f5917c.gif)
 - 모바일 화면에서는 글 제목과 작성자만 렌더링 되도록 구현하였습니다.
-  ![모바일화면_AdobeExpress](https://user-images.githubusercontent.com/95751232/183074160-0a370fda-935a-4635-816c-f24d930a75fa.gif)
+  - ![모바일화면_AdobeExpress](https://user-images.githubusercontent.com/95751232/183074160-0a370fda-935a-4635-816c-f24d930a75fa.gif)
 
 ### 탭 이름 동적 변경
 
