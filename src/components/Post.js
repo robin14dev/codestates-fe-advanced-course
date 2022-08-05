@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
-import {useLocation} from "react-router-dom"
+import {useLocation, useParams} from "react-router-dom"
 import Comment from './Comment';
+import { Helmet } from "react-helmet-async";
 
 const Wrapper = styled.div`
 width: 60vw;
@@ -113,23 +114,46 @@ padding: 1rem;
 }
 `
 const Post = () => {
-  const {state} = useLocation()
-  console.log(state);
-  const {title, body, id, userId} = state;
+  // const {state} = useLocation()
+  const location = useLocation()
+  const params = useParams()
+  console.log(params); //* 얘 사용해야됨 {id: '2'}
+  console.log(location); //{pathname: '/posts/2', search: '', hash: '', state: null, key: 'default'}
+  // console.log(state);
+  // const {title, body, id, userId} = state;
 
   const [comments, setComments] = useState([])
+  const [post, setPost] = useState({})
+
 
   useEffect(()=> {
-    axios.get(`${process.env.REACT_APP_API_URL}/posts/${id}/comments`)
+
+    axios.get(`${process.env.REACT_APP_API_URL}/posts/${Number(params.id)}`)
     .then(response => {
-      console.log(response);
-      setComments(response.data)
+      const {id, title, body, userId} = response.data
+      setPost({id, title, body, userId})
+      axios.get(`${process.env.REACT_APP_API_URL}/posts/${id}/comments`)
+      .then(response => {
+        console.log(response);
+        setComments(response.data)
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
     })
+    .catch(err => {
+      console.log(err);
+    })
+
+   
   }, [])
-  // const {id,title, body, userId} = post
+
+  const {title, body, userId} = post
   return (
    
      <Wrapper>
+    <Helmet><title>{title}</title></Helmet>
      <Header>
        <h1>{title}</h1>
        <div>작성자 : {userId}</div>

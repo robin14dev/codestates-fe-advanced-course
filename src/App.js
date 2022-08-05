@@ -1,8 +1,10 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import Post from "./components/Post"
 import Mainpage from "./pages/Mainpage";
 import styled from "styled-components";
 import Footer from "./components/Footer";
+import { Helmet } from "react-helmet-async";
+
 const Wrapper = styled.div`
 `
 
@@ -27,14 +29,18 @@ top: 0;
 
 function App() {
   
-  let navigate = useNavigate()
-
 
  const gohome = () => {
-  navigate("/")
+  window.location.replace('/')
+
  }
   return (
+
+  
     <Wrapper>
+       <Helmet>
+    <title>FE-Advanced</title>
+    </Helmet>
        <Header onClick={gohome}><h1>FE-Advanced</h1></Header>
      <Routes>
       <Route path="/" element={<Mainpage />}></Route>

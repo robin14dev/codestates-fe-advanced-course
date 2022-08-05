@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BsSearch } from "react-icons/bs";
+import {useNavigate} from "react-router-dom"
 const Wrapper = styled.div`
 background-color: #f6f9fa ;
 width: 100%;
@@ -40,6 +41,7 @@ align-items: center;
 const Search = ({onSearch}) => {
   const [text, setText] = useState('')
 
+  let navigate = useNavigate()
   const onChangeText = (e) => {
     setText(e.target.value)
   }
@@ -49,7 +51,7 @@ const Search = ({onSearch}) => {
     if(e.key === 'Enter') {
    
       onSearch(text);
-   
+      navigate(`?query=${text}`)
     }
    
    }
@@ -57,12 +59,14 @@ const Search = ({onSearch}) => {
   const onClickSearch = () => {
     
     onSearch(text)
+    navigate(`?query=${text}`)
+
   }
 
   return (
     <Wrapper>
       <input placeholder='검색해보세요' onKeyPress={onKeyPress} onChange={onChangeText}></input> 
-      <button onClick={onClickSearch}><BsSearch size={20}/></button>
+     <button onClick={onClickSearch}><BsSearch size={20}/></button>
     </Wrapper>
   );
 };
