@@ -7,6 +7,11 @@
 ## 프로젝트 실행 방법
 
 1. 로컬에 git clone 으로 해당 repository를 클론합니다.
+1. 로컬에 `git clone` 으로 해당 repository를 클론합니다.
+2. `npm install`로 `package.json`에 있는 모듈들을 다운받습니다.
+3. `env.example`에 들어있는 환경변수명에 다음과 같은 url값을 할당한 후, `.env`로 변경합니다.
+   `https://jsonplaceholder.typicode.com`
+4. `npm run start`로 앱을 실행합니다.
 
 ## 사용한 스택 목록
 
